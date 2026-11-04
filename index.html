@@ -1,12 +1,490 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./scss/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOP.CO</title>
+  <!-- шрифт satoshi -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <!-- стили -->
+  <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
-    <a href="Product.html">Home</a>
+
+  <!-- верхняя черная строка -->
+  <div class="top-bar">
+    <p class="top-bar__text">
+      Sign up and get 20% off to your first order. 
+      <a href="#">Sign Up Now</a>
+    </p>
+    <button type="button" class="top-bar__close" aria-label="закрыть">
+      <img src="./assest/icons/Cross.svg" alt="закрыть">
+    </button>
+  </div>
+
+  <!-- шапка сайта -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="index.html">
+          <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO">
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <a href="Category.html">Shop <img src="./assest/icons/CornerDown.svg" alt="стрелка"></a>
+        <a href="#">On Sale</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Brands</a>
+      </nav>
+
+      <form action="/search" method="get" class="header__search">
+        <img src="./assest/icons/Loop.svg" alt="поиск">
+        <input type="search" placeholder="Search for products...">
+      </form>
+
+      <div class="header__actions">
+        <a href="Cart.html" aria-label="корзина">
+          <img src="./assest/icons/Cart.svg" alt="корзина">
+        </a>
+        <a href="#" aria-label="аккаунт">
+          <img src="./assest/icons/Profile.svg" alt="аккаунт">
+        </a>
+      </div>
+    </div>
+    <hr class="header__divider">
+  </header>
+
+  <main class="main">
+
+    <!-- первый экран с моделями -->
+    <section class="hero">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">
+            FIND CLOTHES<br>
+            THAT MATCHES<br>
+            YOUR STYLE
+          </h1>
+          <p class="hero__desc">
+            Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+          </p>
+          <a href="Category.html" class="hero__btn">Shop Now</a>
+
+          <div class="hero__stats">
+            <div class="hero__stat-item">
+              <span class="hero__stat-num">200+</span>
+              <span class="hero__stat-label">International Brands</span>
+            </div>
+            <div class="hero__stat-divider"></div>
+            <div class="hero__stat-item">
+              <span class="hero__stat-num">2,000+</span>
+              <span class="hero__stat-label">High-Quality Products</span>
+            </div>
+            <div class="hero__stat-divider"></div>
+            <div class="hero__stat-item">
+              <span class="hero__stat-num">30,000+</span>
+              <span class="hero__stat-label">Happy Customers</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <img class="hero__img" src="./assest/images/hero-models.png" alt="модели">
+          <img class="hero__star hero__star--big" src="./assest/icons/star-black.svg" alt="звезда">
+          <img class="hero__star hero__star--small" src="./assest/icons/star-black.svg" alt="звезда">
+        </div>
+      </div>
+    </section>
+
+    <!-- черная полоса брендов -->
+    <section class="brands">
+      <div class="container brands__container">
+        <img class="brands__logo" src="./assest/icons/Versace.svg" alt="Versace">
+        <img class="brands__logo" src="./assest/icons/Zara.svg" alt="Zara">
+        <img class="brands__logo" src="./assest/icons/Gucci.svg" alt="Gucci">
+        <img class="brands__logo" src="./assest/icons/Prada.svg" alt="Prada">
+        <img class="brands__logo" src="./assest/icons/Calvin_Klein.svg" alt="Calvin Klein">
+      </div>
+    </section>
+
+    <!-- новинки -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="products-section__title">NEW ARRIVALS</h2>
+        <ul class="product-grid">
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/T-shirt_with_Tape_Details.png" alt="T-shirt with Tape Details">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">T-shirt with Tape Details</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/HalfStar.svg" alt="половина звезды">
+                </div>
+                <span class="product-card__score">4.5/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$120</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Skinny_Fit_Jeans.png" alt="Skinny Fit Jeans">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Skinny Fit Jeans</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/HalfStar.svg" alt="половина звезды">
+                </div>
+                <span class="product-card__score">3.5/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$240</span>
+                <span class="product-card__price--old">$260</span>
+                <span class="product-card__badge">-20%</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Checkered_Shirt.png" alt="Checkered Shirt">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Checkered Shirt</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/HalfStar.svg" alt="половина звезды">
+                </div>
+                <span class="product-card__score">4.5/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$180</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Sleeve_Striped_T-shirt.png" alt="Sleeve Striped T-shirt">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Sleeve Striped T-shirt</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/HalfStar.svg" alt="половина звезды">
+                </div>
+                <span class="product-card__score">4.5/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$130</span>
+                <span class="product-card__price--old">$160</span>
+                <span class="product-card__badge">-30%</span>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <div class="products-section__btn-wrap">
+          <a href="Category.html" class="products-section__view-all">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-divider">
+
+    <!-- топ продаж -->
+    <section class="products-section">
+      <div class="container">
+        <h2 class="products-section__title">TOP SELLING</h2>
+        <ul class="product-grid">
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Vertical_Striped_Shirt.png" alt="Vertical Striped Shirt">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Vertical Striped Shirt</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                </div>
+                <span class="product-card__score">5.0/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$212</span>
+                <span class="product-card__price--old">$232</span>
+                <span class="product-card__badge">-20%</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Courage_Graphic_T-shirt.png" alt="Courage Graphic T-shirt">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Courage Graphic T-shirt</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                </div>
+                <span class="product-card__score">4.0/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$145</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Loose_Fit_Bermuda_Shorts.png" alt="Loose Fit Bermuda Shorts">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Loose Fit Bermuda Shorts</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                </div>
+                <span class="product-card__score">3.0/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$80</span>
+              </div>
+            </article>
+          </li>
+
+          <li class="product-grid__item">
+            <article class="product-card">
+              <div class="product-card__thumb">
+                <img src="./assest/images/Faded_Skinny_Jeans.png" alt="Faded Skinny Jeans">
+              </div>
+              <h3 class="product-card__title"><a href="Product.html">Faded Skinny Jeans</a></h3>
+              <div class="product-card__rating">
+                <div class="product-card__stars">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/Star.svg" alt="звезда">
+                  <img class="star-icon" src="./assest/icons/HalfStar.svg" alt="половина звезды">
+                </div>
+                <span class="product-card__score">4.5/5</span>
+              </div>
+              <div class="product-card__pricing">
+                <span class="product-card__price">$210</span>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+        <div class="products-section__btn-wrap">
+          <a href="Category.html" class="products-section__view-all">View All</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- выбор по стилю одежды -->
+    <section class="dress-style">
+      <div class="container">
+        <div class="dress-style__card">
+          <h2 class="dress-style__title">BROWSE BY DRESS STYLE</h2>
+          <div class="dress-style__grid">
+            <a href="Category.html" class="dress-style__item dress-style__item--casual">
+              <span class="dress-style__name">Casual</span>
+              <img src="./assest/images/Casual.png" alt="Casual">
+            </a>
+            <a href="Category.html" class="dress-style__item dress-style__item--formal">
+              <span class="dress-style__name">Formal</span>
+              <img src="./assest/images/Formal.png" alt="Formal">
+            </a>
+            <a href="Category.html" class="dress-style__item dress-style__item--party">
+              <span class="dress-style__name">Party</span>
+              <img src="./assest/images/Party.png" alt="Party">
+            </a>
+            <a href="Category.html" class="dress-style__item dress-style__item--gym">
+              <span class="dress-style__name">Gym</span>
+              <img src="./assest/images/Gym.png" alt="Gym">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- отзывы покупателей -->
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews__header">
+          <h2 class="reviews__title">OUR HAPPY CUSTOMERS</h2>
+          <div class="reviews__arrows">
+            <button class="reviews__arrow" type="button" aria-label="назад">
+              <img src="./assest/icons/ArrowLeft.svg" alt="назад">
+            </button>
+            <button class="reviews__arrow" type="button" aria-label="вперед">
+              <img src="./assest/icons/ArrowRight.svg" alt="вперед">
+            </button>
+          </div>
+        </div>
+
+        <div class="reviews__list">
+          <article class="review-card">
+            <div class="review-card__stars">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+            </div>
+            <div class="review-card__user">
+              <span class="review-card__name">Sarah M.</span>
+              <img class="review-card__verified" src="./assest/icons/True.svg" alt="галочка">
+            </div>
+            <p class="review-card__text">
+              "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+            </div>
+            <div class="review-card__user">
+              <span class="review-card__name">Alex K.</span>
+              <img class="review-card__verified" src="./assest/icons/True.svg" alt="галочка">
+            </div>
+            <p class="review-card__text">
+              "Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions."
+            </p>
+          </article>
+
+          <article class="review-card">
+            <div class="review-card__stars">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+              <img src="./assest/icons/Star.svg" alt="звезда">
+            </div>
+            <div class="review-card__user">
+              <span class="review-card__name">James L.</span>
+              <img class="review-card__verified" src="./assest/icons/True.svg" alt="галочка">
+            </div>
+            <p class="review-card__text">
+              "As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- баннер подписки -->
+  <section class="newsletter">
+    <h2 class="newsletter__title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+    <form class="newsletter__form">
+      <div class="newsletter__input-wrap">
+        <img src="./assest/icons/Mail.svg" alt="почта">
+        <input type="email" placeholder="Enter your email address">
+      </div>
+      <button class="newsletter__submit" type="submit">Subscribe to Newsletter</button>
+    </form>
+  </section>
+
+  <!-- подвал сайта -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html">
+          <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO" class="footer__logo-img">
+        </a>
+        <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="twitter"><img src="./assest/icons/Twitter.svg" alt="твиттер"></a>
+          <a href="#" class="footer__social-btn footer__social-btn--active" aria-label="facebook"><img src="./assest/icons/facebook.svg" alt="фейсбук"></a>
+          <a href="#" class="footer__social-btn" aria-label="instagram"><img src="./assest/icons/Instagram.svg" alt="инстаграм"></a>
+          <a href="#" class="footer__social-btn" aria-label="github"><img src="./assest/icons/GitHub.svg" alt="гитхаб"></a>
+        </div>
+      </div>
+
+      <div class="footer__nav">
+        <h5>Company</h5>
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Works</a>
+        <a href="#">Career</a>
+      </div>
+
+      <div class="footer__nav">
+        <h5>Help</h5>
+        <a href="#">Customer Support</a>
+        <a href="#">Delivery Details</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="footer__nav">
+        <h5>FAQ</h5>
+        <a href="#">Account</a>
+        <a href="#">Manage Deliveries</a>
+        <a href="#">Orders</a>
+        <a href="#">Payments</a>
+      </div>
+
+      <div class="footer__nav">
+        <h5>Resources</h5>
+        <a href="#">Free eBooks</a>
+        <a href="#">Development Tutorial</a>
+        <a href="#">How to - Blog</a>
+        <a href="#">Youtube Playlist</a>
+      </div>
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__bottom">
+      <p>Shop.co © 2000-2026, All Rights Reserved</p>
+      <div class="footer__payments">
+        <div class="payment-card"><img src="./assest/icons/VISA.svg" alt="Visa"></div>
+        <div class="payment-card"><img src="./assest/icons/MasterCard.svg" alt="MasterCard"></div>
+        <div class="payment-card"><img src="./assest/icons/PayPal.svg" alt="PayPal"></div>
+        <div class="payment-card"><img src="./assest/icons/ApplePay.svg" alt="ApplePay"></div>
+        <div class="payment-card"><img src="./assest/icons/GooglePay.svg" alt="GooglePay"></div>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
