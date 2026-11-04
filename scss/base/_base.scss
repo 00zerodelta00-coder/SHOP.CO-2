@@ -1,0 +1,21 @@
+// Подключение переменных и миксинов
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Настройка базовых стилей
+
+body {
+  background-color: v.$BaseBackground;
+  color: v.$TextBlack;
+  font-family: v.$Font-Main;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

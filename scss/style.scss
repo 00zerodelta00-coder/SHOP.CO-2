@@ -1,0 +1,19 @@
+// Подключение переменных и миксинов
+@use './abstracts/mixins';
+@use './abstracts/variables';
+
+// Подключение базовых стилей
+@use './base/base';
+@use './base/reset';
+@use './base/fonts';
+
+// Подключение компонентов
+@use './components/button';
+@use './components/cards';
+@use './components/breadcrumbs';
+@use './components/filters';
+@use './components/product-detail';
+
+// Подключение шапки и подвала
+@use './layout/footer';
+@use './layout/header';

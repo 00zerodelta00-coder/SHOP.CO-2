@@ -1,0 +1,33 @@
+// Подключение переменных и миксинов
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Настройка хлебных крошек
+
+.breadcrumbs {
+  width: 100%;
+  max-width: 1240px;
+  margin: 24px auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  a,
+  span {
+    font-size: 16px;
+    color: v.$TextGray;
+    text-decoration: none;
+  }
+
+  &__current {
+    color: v.$TextBlack !important;
+    font-weight: 500;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
+  }
+}

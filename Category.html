@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOP.CO - Catalog Casual</title>
+  <!-- шрифт satoshi -->
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./scss/style.css">
+</head>
+<body>
+
+  <!-- верхняя рекламная плашка -->
+  <div class="top-bar">
+    <p class="top-bar__text">
+      Sign up and get 20% off to your first order. 
+      <a href="#">Sign Up Now</a>
+    </p>
+    <button type="button" class="top-bar__close" aria-label="close banner">
+      <img src="./assest/icons/Cross.svg" alt="close">
+    </button>
+  </div>
+
+  <!-- шапка сайта -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__logo">
+        <a href="index.html">
+          <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO">
+        </a>
+      </div>
+
+      <nav class="header__nav">
+        <a href="index.html">Shop <img src="./assest/icons/CornerDown.svg" alt="arrow-down"></a>
+        <a href="#">On Sale</a>
+        <a href="#">New Arrivals</a>
+        <a href="#">Brands</a>
+      </nav>
+
+      <form action="/search" method="get" class="header__search">
+        <img src="./assest/icons/Loop.svg" alt="search-icon">
+        <input id="searchInput" type="search" name="search" placeholder="Search for products...">
+      </form>
+
+      <div class="header__actions">
+        <a href="cart.html" aria-label="cart">
+          <img src="./assest/icons/Cart.svg" alt="cart">
+        </a>
+        <a href="#" aria-label="profile">
+          <img src="./assest/icons/Profile.svg" alt="profile">
+        </a>
+      </div>
+    </div>
+    <hr class="header__divider">
+  </header>
+
+  <main>
+    <!-- хлебные крошки -->
+    <nav class="breadcrumbs" aria-label="breadcrumbs">
+      <a href="index.html">Home</a>
+      <img src="./assest/icons/CornerRight.svg" alt="arrow">
+      <span class="breadcrumbs__current">Casual</span>
+    </nav>
+
+    <!-- основной макет каталога: фильтры слева и товары справа -->
+    <div class="catalog-layout">
+      <!-- боковая панель с фильтрами -->
+      <aside class="filters">
+        <form class="filters__form">
+          <div class="filters__header">
+            <h3>Filters</h3>
+            <img src="./assest/icons/FilterIco.svg" alt="filters-icon">
+          </div>
+
+          <hr class="filters__divider">
+
+          <!-- категории одежды -->
+          <ul class="filters__category-list">
+            <li class="filters__category-item">
+              <button type="button">T-shirts</button>
+              <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            </li>
+            <li class="filters__category-item">
+              <button type="button">Shorts</button>
+              <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            </li>
+            <li class="filters__category-item">
+              <button type="button">Shirts</button>
+              <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            </li>
+            <li class="filters__category-item">
+              <button type="button">Hoodie</button>
+              <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            </li>
+            <li class="filters__category-item">
+              <button type="button">Jeans</button>
+              <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            </li>
+          </ul>
+
+          <hr class="filters__divider">
+
+          <!-- блок цены -->
+          <div class="filters__price">
+            <div class="filters__price-header">
+              <h3>Price</h3>
+              <img src="./assest/icons/CornerUp.svg" alt="arrow-up">
+            </div>
+            <div class="filters__range-slider">
+              <div class="filters__range-track"></div>
+              <input type="range" class="filters__range-input filters__range-input--min" min="50" max="300" value="50">
+              <input type="range" class="filters__range-input filters__range-input--max" min="50" max="300" value="200">
+            </div>
+            <div class="filters__range-values">
+              <span class="filters__range-val filters__range-val--min">$50</span>
+              <span class="filters__range-val filters__range-val--max">$200</span>
+            </div>
+          </div>
+
+          <hr class="filters__divider">
+
+          <!-- выбор цвета 5x2 -->
+          <fieldset class="filters__colors">
+            <legend>Colors</legend>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Green" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #00C12B;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Red" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #F50606;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Yellow" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #F5DD06;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Orange" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #F57906;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Lightblue" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #06CAF5;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Blue" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #063AF5;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Purple" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #7D06F5;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Pink" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #F506A4;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="White" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #FFFFFF;"></span>
+            </label>
+            <label class="color-option">
+              <input type="checkbox" name="colors" value="Black" class="color-option__input">
+              <span class="color-option__visual" style="background-color: #000000;"></span>
+            </label>
+          </fieldset>
+
+          <hr class="filters__divider">
+
+          <!-- выбор размера -->
+          <div class="filters__size">
+            <div class="filters__size-header">
+              <h3>Size</h3>
+              <img src="./assest/icons/CornerUp.svg" alt="arrow-up">
+            </div>
+            <div class="filters__size-list">
+              <label class="size-pill"><input type="checkbox" name="size" value="XX-Small" class="size-pill__input"><span class="size-pill__label">XX-Small</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="X-Small" class="size-pill__input"><span class="size-pill__label">X-Small</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="Small" class="size-pill__input"><span class="size-pill__label">Small</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="Medium" class="size-pill__input"><span class="size-pill__label">Medium</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="Large" class="size-pill__input" checked><span class="size-pill__label">Large</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="X-Large" class="size-pill__input"><span class="size-pill__label">X-Large</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="XX-Large" class="size-pill__input"><span class="size-pill__label">XX-Large</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="3X-Large" class="size-pill__input"><span class="size-pill__label">3X-Large</span></label>
+              <label class="size-pill"><input type="checkbox" name="size" value="4X-Large" class="size-pill__input"><span class="size-pill__label">4X-Large</span></label>
+            </div>
+          </div>
+
+          <hr class="filters__divider">
+
+          <!-- стиль одежды -->
+          <div class="filters__dress-style">
+            <div class="filters__style-header">
+              <legend>Dress Style</legend>
+              <img src="./assest/icons/CornerUp.svg" alt="arrow-up">
+            </div>
+            <ul class="filters__category-list">
+              <li class="filters__category-item">
+                <button type="button">Casual</button>
+                <img src="./assest/icons/CornerRight.svg" alt="arrow">
+              </li>
+              <li class="filters__category-item">
+                <button type="button">Formal</button>
+                <img src="./assest/icons/CornerRight.svg" alt="arrow">
+              </li>
+              <li class="filters__category-item">
+                <button type="button">Party</button>
+                <img src="./assest/icons/CornerRight.svg" alt="arrow">
+              </li>
+              <li class="filters__category-item">
+                <button type="button">Gym</button>
+                <img src="./assest/icons/CornerRight.svg" alt="arrow">
+              </li>
+            </ul>
+          </div>
+
+          <button type="submit" class="filters__submit">Apply Filter</button>
+        </form>
+      </aside>
+
+      <!-- секция каталога товаров -->
+      <section class="catalog-main">
+        <div class="catalog-main__header">
+          <h2>Casual</h2>
+          <div class="catalog-main__meta">
+            <p>Showing 1-9 of 9 Products</p>
+            <div class="catalog-main__sort">
+              <span>Sort by:</span>
+              <button type="button">Most Popular</button>
+              <img src="./assest/icons/CornerDown.svg" alt="arrow-down">
+            </div>
+          </div>
+        </div>
+
+        <!-- контейнер сетки товаров 3x3 (заполняется из js/catalog.js) -->
+        <ul class="product-grid" id="catalogProductsGrid"></ul>
+
+        <hr class="catalog-main__divider">
+
+        <!-- пагинация -->
+        <nav class="pagination" aria-label="pagination">
+          <button type="button" class="pagination__arrow pagination__arrow--prev">
+            <img src="./assest/icons/ArrowLeft.svg" alt="prev">
+            Previous
+          </button>
+          <div class="pagination__numbers">
+            <button type="button" class="pagination__num pagination__num--active">1</button>
+            <button type="button" class="pagination__num">2</button>
+            <button type="button" class="pagination__num">3</button>
+            <span class="pagination__dots">...</span>
+            <button type="button" class="pagination__num">8</button>
+            <button type="button" class="pagination__num">9</button>
+            <button type="button" class="pagination__num">10</button>
+          </div>
+          <button type="button" class="pagination__arrow pagination__arrow--next">
+            Next
+            <img src="./assest/icons/ArrowRight.svg" alt="next">
+          </button>
+        </nav>
+      </section>
+    </div>
+  </main>
+
+  <!-- баннер подписки на новости -->
+  <div class="newsletter">
+    <h2 class="newsletter__title">STAY UPTO DATE ABOUT<br>OUR LATEST OFFERS</h2>
+    <form class="newsletter__form" action="/subscribe" method="post">
+      <div class="newsletter__input-wrap">
+        <img src="./assest/icons/Mail.svg" alt="mail">
+        <input type="email" placeholder="Enter your email address" required>
+      </div>
+      <button type="submit" class="newsletter__submit">Subscribe to Newsletter</button>
+    </form>
+  </div>
+
+  <!-- подвал сайта -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="footer__brand">
+        <a href="index.html">
+          <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO" class="footer__logo-img">
+        </a>
+        <p>We have clothes that suits your style and which you’re proud to wear. From women to men.</p>
+        <div class="footer__socials">
+          <a href="#" class="footer__social-btn" aria-label="Twitter">
+            <img src="./assest/icons/Twitter.svg" alt="twitter">
+          </a>
+          <a href="#" class="footer__social-btn footer__social-btn--active" aria-label="Facebook">
+            <img src="./assest/icons/facebook.svg" alt="facebook">
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="Instagram">
+            <img src="./assest/icons/Instagram.svg" alt="instagram">
+          </a>
+          <a href="#" class="footer__social-btn" aria-label="GitHub">
+            <img src="./assest/icons/GitHub.svg" alt="github">
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer__nav">
+        <h5>COMPANY</h5>
+        <a href="#">About</a>
+        <a href="#">Features</a>
+        <a href="#">Works</a>
+        <a href="#">Career</a>
+      </nav>
+
+      <nav class="footer__nav">
+        <h5>HELP</h5>
+        <a href="#">Customer Support</a>
+        <a href="#">Delivery Details</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </nav>
+
+      <nav class="footer__nav">
+        <h5>FAQ</h5>
+        <a href="#">Account</a>
+        <a href="#">Manage Deliveries</a>
+        <a href="#">Orders</a>
+        <a href="#">Payments</a>
+      </nav>
+
+      <nav class="footer__nav">
+        <h5>RESOURCES</h5>
+        <a href="#">Free eBooks</a>
+        <a href="#">Development Tutorial</a>
+        <a href="#">How to - Blog</a>
+        <a href="#">YouTube Playlist</a>
+      </nav>
+    </div>
+
+    <hr class="footer__divider">
+
+    <div class="footer__bottom">
+      <p>Shop.co © 2000-2023, All Rights Reserved</p>
+
+        <div class="footer__payments">
+            <div class="payment-card"><img src="./assest/icons/VISA.svg" alt="Visa"></div>
+            <div class="payment-card"><img src="./assest/icons/MasterCard.svg" alt="Mastercard"></div>
+            <div class="payment-card"><img src="./assest/icons/PayPal.svg" alt="Paypal"></div>
+            <div class="payment-card"><img src="./assest/icons/ApplePay.svg" alt="Apple Pay"></div>
+            <div class="payment-card"><img src="./assest/icons/GooglePay.svg" alt="Google Pay"></div>
+        </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/catalog.js"></script>
+</body>
+</html>

@@ -1,0 +1,287 @@
+// Подключение переменных и миксинов
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+// Настройка фильтров
+
+.catalog-layout {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+.filters {
+  width: 295px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 20px 24px;
+  flex-shrink: 0;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &__divider {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+
+  &__category-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__category-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      border: none;
+      font-size: 16px;
+      color: v.$TextGray;
+      cursor: pointer;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__price-header,
+  &__size-header,
+  &__style-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3,
+    legend {
+      font-size: 20px;
+      font-weight: 700;
+      border: none;
+      padding: 0;
+    }
+
+    img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__range-slider {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    margin-top: 12px;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background-color: v.$DarknessBaseBackground;
+      border-radius: 4px;
+      z-index: 1;
+    }
+  }
+
+  &__range-track {
+    position: absolute;
+    height: 6px;
+    background-color: v.$BlockBlack;
+    border-radius: 4px;
+    z-index: 2;
+    left: 0%;
+    right: 40%;
+  }
+
+  &__range-input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+    z-index: 3;
+
+    &::-webkit-slider-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: v.$BlockBlack;
+      cursor: pointer;
+      pointer-events: auto;
+      -webkit-appearance: none;
+    }
+  }
+
+  &__range-values {
+    position: relative;
+    width: 100%;
+    height: 20px;
+    margin-top: 6px;
+  }
+
+  &__range-val {
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: 500;
+
+    &--min { left: 0%; }
+    &--max { left: 60%; }
+  }
+
+  &__colors {
+    border: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    justify-items: center;
+    gap: 16px 12px;
+
+    legend {
+      width: 100%;
+      grid-column: 1 / -1;
+      margin-bottom: 16px;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  &__size-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  &__dress-style {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__submit {
+    width: 100%;
+    height: 48px;
+    background-color: v.$BlockBlack;
+    color: v.$TextWhite;
+    border: none;
+    border-radius: 62px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 8px;
+  }
+}
+
+.color-option {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked + .color-option__visual::after {
+      content: "✓";
+      color: v.$TextWhite;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    &[value="White"]:checked + .color-option__visual::after {
+      color: v.$TextBlack;
+    }
+  }
+
+  &__visual {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+}
+
+.size-pill {
+  cursor: pointer;
+  display: inline-flex;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+
+    &:checked + .size-pill__label {
+      background-color: v.$BlockBlack;
+      color: v.$TextWhite;
+    }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 74px;
+    height: 39px;
+    padding: 10px 16px;
+    border-radius: 62px;
+    background-color: v.$DarknessBaseBackground;
+    color: v.$TextGray;
+    font-size: 14px;
+    transition: all 0.15s ease;
+  }
+}
