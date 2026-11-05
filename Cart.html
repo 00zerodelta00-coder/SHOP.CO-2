@@ -3,10 +3,309 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SHOP.CO - Cart</title>
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./scss/style.css">
 </head>
 <body>
-    
+
+    <!-- верхняя рекламный баннер -->
+    <div class="top-bar">
+        <p class="top-bar__text">
+            Sign up and get 20% off to your first order. 
+            <a href="#">Sign Up Now</a>
+        </p>
+        <button type="button" class="top-bar__close" aria-label="close banner">
+            <img src="./assest/icons/Cross.svg" alt="close">
+        </button>
+    </div>
+
+    <!-- шапка сайта -->
+    <header class="header">
+        <div class="header__inner">
+            <div class="header__logo">
+                <a href="index.html">
+                    <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO">
+                </a>
+            </div>
+
+            <nav class="header__nav">
+                <a href="Category.html">Shop <img src="./assest/icons/CornerDown.svg" alt="arrow-down"></a>
+                <a href="#">On Sale</a>
+                <a href="#">New Arrivals</a>
+                <a href="#">Brands</a>
+            </nav>
+
+            <form action="/search" method="get" class="header__search">
+                <img src="./assest/icons/Loop.svg" alt="search-icon">
+                <input id="searchInput" type="search" name="search" placeholder="Search for products...">
+            </form>
+
+            <div class="header__actions">
+                <a href="Cart.html" aria-label="cart">
+                    <img src="./assest/icons/Cart.svg" alt="cart">
+                </a>
+                <a href="#" aria-label="profile">
+                    <img src="./assest/icons/Profile.svg" alt="profile">
+                </a>
+            </div>
+        </div>
+        <hr class="header__divider">
+    </header>
+
+    <main>
+        <!-- хлебные крошки -->
+        <nav class="breadcrumbs" aria-label="breadcrumbs">
+            <a href="index.html">Home</a>
+            <img src="./assest/icons/CornerRight.svg" alt="arrow">
+            <span class="breadcrumbs__current">Cart</span>
+        </nav>
+
+        <!-- блок корзины -->
+        <section class="cart-section">
+            <div class="cart-section__container">
+                <h1 class="cart-section__title">YOUR CART</h1>
+
+                <div class="cart-section__layout">
+                    <!-- список товаров в корзине -->
+                    <div class="cart-items" id="cartItemsContainer">
+                        
+                        <!-- товар 1 -->
+                        <article class="cart-item" data-cart-item-id="1">
+                            <div class="cart-item__image-wrap">
+                                <img src="./assest/images/image-1.png" alt="Gradient Graphic T-shirt" class="cart-item__img">
+                            </div>
+                            <div class="cart-item__content">
+                                <div class="cart-item__header">
+                                    <h3 class="cart-item__title">Gradient Graphic T-shirt</h3>
+                                    <button type="button" class="cart-item__delete-btn" aria-label="delete item">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="cart-item__meta">
+                                    <span class="cart-item__prop">Size: <strong class="cart-item__val">Large</strong></span>
+                                    <span class="cart-item__prop">Color: <strong class="cart-item__val">White</strong></span>
+                                </div>
+                                <div class="cart-item__footer">
+                                    <span class="cart-item__price">$145</span>
+                                    <div class="quantity-control quantity-control--small">
+                                        <button type="button" class="quantity-control__btn" aria-label="decrease quantity">-</button>
+                                        <span class="quantity-control__value">1</span>
+                                        <button type="button" class="quantity-control__btn" aria-label="increase quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <hr class="cart-items__divider">
+
+                        <!-- товар 2 -->
+                        <article class="cart-item" data-cart-item-id="2">
+                            <div class="cart-item__image-wrap">
+                                <img src="./assest/images/image-2.png" alt="Checkered Shirt" class="cart-item__img">
+                            </div>
+                            <div class="cart-item__content">
+                                <div class="cart-item__header">
+                                    <h3 class="cart-item__title">Checkered Shirt</h3>
+                                    <button type="button" class="cart-item__delete-btn" aria-label="delete item">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="cart-item__meta">
+                                    <span class="cart-item__prop">Size: <strong class="cart-item__val">Medium</strong></span>
+                                    <span class="cart-item__prop">Color: <strong class="cart-item__val">Red</strong></span>
+                                </div>
+                                <div class="cart-item__footer">
+                                    <span class="cart-item__price">$180</span>
+                                    <div class="quantity-control quantity-control--small">
+                                        <button type="button" class="quantity-control__btn" aria-label="decrease quantity">-</button>
+                                        <span class="quantity-control__value">1</span>
+                                        <button type="button" class="quantity-control__btn" aria-label="increase quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <hr class="cart-items__divider">
+
+                        <!-- товар 3 -->
+                        <article class="cart-item" data-cart-item-id="3">
+                            <div class="cart-item__image-wrap">
+                                <img src="./assest/images/image-3.png" alt="Skinny Fit Jeans" class="cart-item__img">
+                            </div>
+                            <div class="cart-item__content">
+                                <div class="cart-item__header">
+                                    <h3 class="cart-item__title">Skinny Fit Jeans</h3>
+                                    <button type="button" class="cart-item__delete-btn" aria-label="delete item">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FF3333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                            <polyline points="3 6 5 6 21 6"></polyline>
+                                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                            <line x1="10" y1="11" x2="10" y2="17"></line>
+                                            <line x1="14" y1="11" x2="14" y2="17"></line>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="cart-item__meta">
+                                    <span class="cart-item__prop">Size: <strong class="cart-item__val">Large</strong></span>
+                                    <span class="cart-item__prop">Color: <strong class="cart-item__val">Blue</strong></span>
+                                </div>
+                                <div class="cart-item__footer">
+                                    <span class="cart-item__price">$240</span>
+                                    <div class="quantity-control quantity-control--small">
+                                        <button type="button" class="quantity-control__btn" aria-label="decrease quantity">-</button>
+                                        <span class="quantity-control__value">1</span>
+                                        <button type="button" class="quantity-control__btn" aria-label="increase quantity">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <!-- сводка заказа -->
+                    <aside class="order-summary">
+                        <h2 class="order-summary__title">Order Summary</h2>
+
+                        <div class="order-summary__rows">
+                            <div class="order-summary__row">
+                                <span class="order-summary__label">Subtotal</span>
+                                <span class="order-summary__value" id="summarySubtotal">$565</span>
+                            </div>
+                            <div class="order-summary__row">
+                                <span class="order-summary__label">Discount (-20%)</span>
+                                <span class="order-summary__value order-summary__value--discount" id="summaryDiscount">-$113</span>
+                            </div>
+                            <div class="order-summary__row">
+                                <span class="order-summary__label">Delivery Fee</span>
+                                <span class="order-summary__value" id="summaryDelivery">$15</span>
+                            </div>
+
+                            <hr class="order-summary__divider">
+
+                            <div class="order-summary__row order-summary__row--total">
+                                <span class="order-summary__label">Total</span>
+                                <span class="order-summary__value" id="summaryTotal">$467</span>
+                            </div>
+                        </div>
+
+                        <!-- форма промокода -->
+                        <form class="promo-form" id="promoForm">
+                            <div class="promo-form__input-wrap">
+                                <svg class="promo-form__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.4)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                                    <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                                </svg>
+                                <input type="text" class="promo-form__input" placeholder="Add promo code" id="promoInput">
+                            </div>
+                            <button type="submit" class="promo-form__btn" id="promoBtn">Apply</button>
+                        </form>
+
+                        <!-- кнопка оформления -->
+                        <button type="button" class="order-summary__checkout-btn" id="checkoutBtn">
+                            Go to Checkout
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- подписка на рассылку -->
+    <section class="newsletter">
+        <div class="newsletter__container">
+            <h2 class="newsletter__title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
+            <form class="newsletter__form" action="#" method="post">
+                <div class="newsletter__input-wrap">
+                    <img src="./assest/icons/Loop.svg" alt="email icon" class="newsletter__icon" style="filter: invert(0.5);">
+                    <input type="email" placeholder="Enter your email address" class="newsletter__input" required>
+                </div>
+                <button type="submit" class="newsletter__submit-btn">Subscribe to Newsletter</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- футер -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__brand-col">
+                <a href="index.html" class="footer__logo">
+                    <img src="./assest/icons/SHOP.CO.svg" alt="SHOP.CO">
+                </a>
+                <p class="footer__desc">
+                    We have clothes that suits your style and which you're proud to wear. From women to men.
+                </p>
+                <div class="footer__socials">
+                    <a href="#" aria-label="twitter"><img src="./assest/icons/Profile.svg" alt="social" style="width: 20px; filter: invert(1);"></a>
+                    <a href="#" aria-label="facebook"><img src="./assest/icons/Profile.svg" alt="social" style="width: 20px; filter: invert(1);"></a>
+                    <a href="#" aria-label="instagram"><img src="./assest/icons/Profile.svg" alt="social" style="width: 20px; filter: invert(1);"></a>
+                    <a href="#" aria-label="github"><img src="./assest/icons/Profile.svg" alt="social" style="width: 20px; filter: invert(1);"></a>
+                </div>
+            </div>
+
+            <div class="footer__links-grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">COMPANY</h3>
+                    <ul class="footer__list">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Works</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">HELP</h3>
+                    <ul class="footer__list">
+                        <li><a href="#">Customer Support</a></li>
+                        <li><a href="#">Delivery Details</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">FAQ</h3>
+                    <ul class="footer__list">
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">Manage Deliveries</a></li>
+                        <li><a href="#">Orders</a></li>
+                        <li><a href="#">Payments</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">RESOURCES</h3>
+                    <ul class="footer__list">
+                        <li><a href="#">Free eBooks</a></li>
+                        <li><a href="#">Development Tutorial</a></li>
+                        <li><a href="#">How to - Blog</a></li>
+                        <li><a href="#">Youtube Playlist</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p class="footer__copyright">Shop.co © 2000-2023. All Rights Reserved</p>
+            <div class="footer__payments">
+                <span class="pay-badge">Visa</span>
+                <span class="pay-badge">Mastercard</span>
+                <span class="pay-badge">PayPal</span>
+                <span class="pay-badge">Apple Pay</span>
+                <span class="pay-badge">Google Pay</span>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>

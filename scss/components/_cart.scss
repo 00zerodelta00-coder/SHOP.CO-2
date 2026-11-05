@@ -1,0 +1,317 @@
+// стили корзины
+.cart-section {
+    max-width: 1240px;
+    margin: 0 auto 80px;
+    padding: 0 16px;
+
+    &__title {
+        font-size: 40px;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin: 24px 0 24px;
+        color: #000;
+
+        @media (max-width: 768px) {
+            font-size: 32px;
+            margin: 16px 0 20px;
+        }
+    }
+
+    &__layout {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+
+        @media (max-width: 992px) {
+            flex-direction: column;
+        }
+    }
+}
+
+// список карточек товаров
+.cart-items {
+    flex: 1;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 24px;
+    background: #fff;
+    width: 100%;
+
+    @media (max-width: 576px) {
+        padding: 14px 16px;
+    }
+
+    &__divider {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+    }
+}
+
+// карточка отдельной позиции
+.cart-item {
+    display: flex;
+    gap: 16px;
+
+    &__image-wrap {
+        width: 124px;
+        height: 124px;
+        border-radius: 9px;
+        background-color: #f0eeed;
+        overflow: hidden;
+        flex-shrink: 0;
+
+        @media (max-width: 576px) {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    &__content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 700;
+        margin: 0;
+        color: #000;
+
+        @media (max-width: 576px) {
+            font-size: 16px;
+        }
+    }
+
+    &__delete-btn {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 4px;
+        line-height: 1;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin: 4px 0 8px;
+    }
+
+    &__prop {
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+
+        strong {
+            color: #000;
+            font-weight: 400;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__price {
+        font-size: 24px;
+        font-weight: 700;
+        color: #000;
+
+        @media (max-width: 576px) {
+            font-size: 20px;
+        }
+    }
+}
+
+// компактный счетчик количества
+.quantity-control--small {
+    width: 126px;
+    padding: 10px 18px;
+
+    @media (max-width: 576px) {
+        width: 105px;
+        padding: 8px 12px;
+    }
+
+    .quantity-control__btn {
+        font-size: 18px;
+    }
+
+    .quantity-control__value {
+        font-size: 14px;
+    }
+}
+
+// блок сводки заказа
+.order-summary {
+    width: 505px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 20px 24px;
+    background: #fff;
+    flex-shrink: 0;
+
+    @media (max-width: 992px) {
+        width: 100%;
+    }
+
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        margin: 0 0 24px;
+        color: #000;
+
+        @media (max-width: 576px) {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__rows {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--total {
+            .order-summary__label {
+                font-size: 20px;
+                color: #000;
+            }
+
+            .order-summary__value {
+                font-size: 24px;
+                font-weight: 700;
+                color: #000;
+            }
+        }
+    }
+
+    &__label {
+        font-size: 20px;
+        color: rgba(0, 0, 0, 0.6);
+
+        @media (max-width: 576px) {
+            font-size: 16px;
+        }
+    }
+
+    &__value {
+        font-size: 20px;
+        font-weight: 700;
+        color: #000;
+
+        @media (max-width: 576px) {
+            font-size: 16px;
+        }
+
+        &--discount {
+            color: #ff3333;
+        }
+    }
+
+    &__divider {
+        border: none;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        margin: 0;
+    }
+
+    &__checkout-btn {
+        width: 100%;
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 62px;
+        padding: 18px 24px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-top: 24px;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
+
+// блок промокода
+.promo-form {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+
+    &__input-wrap {
+        flex: 1;
+        background: #f0f0f0;
+        border-radius: 62px;
+        display: flex;
+        align-items: center;
+        padding: 12px 16px;
+        gap: 12px;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+    }
+
+    &__input {
+        background: transparent;
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+        color: #000;
+
+        &::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    &__btn {
+        background: #000;
+        color: #fff;
+        border: none;
+        border-radius: 62px;
+        padding: 12px 28px;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.85;
+        }
+    }
+}
