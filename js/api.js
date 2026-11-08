@@ -1,6 +1,11 @@
-const BASE_URL = 'http://localhost:8000';
-
+export const BASE_URL = 'http://localhost:8000';
 export const IMAGE_BASE_URL = `${BASE_URL}/static/images`;
+
+export async function getProducts(params = {}) {
+    const query = new URLSearchParams(params).toString();
+    const endpoint = query ? `/products?${query}` : '/products';
+    return await request(endpoint);
+}
 
 async function request(endpoint, options = {}) { // перевод функции в промис
     const url = `${BASE_URL}${endpoint}`;
