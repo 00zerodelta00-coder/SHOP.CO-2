@@ -39,7 +39,7 @@ function renderStars(rating = 0) {
 }
 
 // Обработка 404 для отсутствующих фото (10–24) с SVG-заглушкой
-window.handleImageError = function(imgElement, productId, productName, requestedSrc) {
+window.handleImageError = function (imgElement, productId, productName, requestedSrc) {
     imgElement.onerror = null;
     console.warn(`[Asset 404] Нет фото для товара #${productId} ("${productName}"): ${requestedSrc}`);
 
@@ -88,6 +88,32 @@ function createProductCard(product, index) {
         </li>
     `;
 }
+
+
+
+
+// логика главной страницы index.html !!!!
+
+async function loadHomeSection(containerId, params) {
+    const container = document.getElementById(containerId)
+    if (!container) return
+
+    try {
+        container.innerHTML = '<li class="loading">Загрузка товаров</li>';
+        const response = await getProducts(params);
+        const products = response.items || [];
+
+        if (products.length === 0) {
+            container.innerHTML = '<li class="empty">Товары не найдены</li>';
+            return;
+        }
+        container.innerHTML = products.map((p, idx) => createProductCard(p, idx)).join('');
+    } catch (error) {
+        console.error(`[API error] ошибка загрузки блока #${containerId}:`, error);
+        container.innerHTML = '<li class="error">не удалось загрузить подборку товаров</li>'
+    }
+}
+
 
 // Расчёт страниц (с троеточием, если страниц > 7)
 function getPageNumbers(current, total) {
@@ -202,6 +228,20 @@ function initPaginationEvents() {
             }
         }
     });
+}
+
+function initApp() {
+    initPaginationEvents();
+    loadCatalogPage(1);
+
+    loadHomeSection('newArrivalsGrid', { page: 1, limit: 4 })
+    loadHomeSection('topSellingGrid', { page: 1, limit: 4, sortBy: 'popular', order: 'desc' });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initApp);
+} else {
+    initApp();
 }
 
 if (document.readyState === 'loading') {
