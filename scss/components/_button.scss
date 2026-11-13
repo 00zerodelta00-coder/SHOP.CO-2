@@ -27,6 +27,11 @@
     font-weight: 500;
     cursor: pointer;
 
+    &:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
     img {
       width: 16px;
       height: 16px;
